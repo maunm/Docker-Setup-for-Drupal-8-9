@@ -1,0 +1,45 @@
+version: '3'
+services:
+  db:
+    container_name: drupal_db
+    image: mysql:5.7
+    volumes:
+      - db-data:/var/lib/mysql
+    env_file:
+      - .docker.env
+    expose: 
+      - '3306'
+    networks:
+      - drupal-net
+    tty: false
+  web:
+    container_name: drupal_web
+    build: ./docker/php
+    working_dir: /var/www
+    volumes:
+       - ./:/var/www
+       - ./docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+       - ./docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    ports:
+      - 8888:80
+    links:
+      - db:drupal_db
+    networks:
+       - drupal-net
+    tty: false
+  phpmyadmin:
+    container_name: drupal_phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    environment:
+       - 'PMA_HOST=db'
+    ports:
+      - "8889:80"
+    networks:
+      - drupal-net
+    depends_on:
+      - db
+    tty: false
+networks:
+  drupal-net:
+volumes:
+  db-data:

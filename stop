@@ -1,0 +1,12 @@
+#!/bin/bash
+echo ""
+echo "########################################"
+echo "#  Docker Hub - Drupal 9 Stop  #";
+echo "########################################"
+echo ""
+docker-compose down --remove-orphans
+echo ""
+echo "##########################################"
+echo "# Docker Hub - Drupal 9 Stopped  #";
+echo "##########################################"
+echo ""

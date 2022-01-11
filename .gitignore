@@ -1,0 +1,75 @@
+# Ignore Drupal's file directory
+web/sites/default/files
+
+# Pantheon commits a settings.php for environment-specific settings.
+# Place local settings in settings.local.php
+web/sites/*/settings.local.php
+web/sites/*/local.settings.php
+web/sites/*/services*.yml
+
+# Ignore configuration files that may contain sensitive information.
+local.settings.php
+local.drush.yml
+local.site.yml
+local.services.yml
+
+# Ignore drupal core.
+web/core
+
+# Ignore paths that contain user-generated content.
+web/sites/*/files
+/files-private
+web/sites/*/private
+
+# Ignore contrib modules. These should be created during build process.
+web/modules/contrib
+web/themes/contrib
+web/profiles/contrib
+web/libraries/contrib
+drush/contrib
+web/libraries
+drush/Commands
+
+
+# Ignore custom theme build artifacts
+web/themes/custom/*/node_modules
+
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# User-specific stuff:
+.idea/
+
+#Composer vendor
+vendor/
+vendor/.git
+
+#Exports
+*.gz
+*.sql
+*.zip
+
+# Drupal contrib module updates
+
+web/.ht.router.php
+web/.eslintrc.json
+web/.editorconfig
+web/.csslintrc
+web/.eslintignore
+web/libraries
+web/robots.txt
+
+# Docker
+.docker.env
+
+# Custom theme
+web/themes/custom/cadrek12/components/asset-builds/css/*.css.*
