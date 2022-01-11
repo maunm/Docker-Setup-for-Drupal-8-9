@@ -38,11 +38,13 @@ $databases['default']['default'] = array (
 );
 
 ```
+To import a DB backup:
+`cat ./backup.sql | docker exec -i drupal_db /usr/bin/mysql -uroot -proot drupal`
 
 8. You should be able to see the sites by going to:
 
-http://localhost:8888/  Drupal Web Page
-http://localhost:8889/  PHPMYADMIN
+http://localhost:8010/  Drupal Web Page
+http://localhost:8011/  PHPMYADMIN
 
 ## Drush & Composer
 

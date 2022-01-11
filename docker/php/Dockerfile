@@ -54,10 +54,3 @@ RUN composer \
   drush/drush:10 && \
   ln -s /usr/src/vendor/bin/drush /usr/bin/drush10 && \
   ln -s /usr/src/vendor/bin/drush /usr/local/bin/drush
-
-RUN php -r "readfile('https://drupalconsole.com/installer');" > drupal.phar && \
-    mv drupal.phar /usr/local/bin/drupal && \
-    chmod +x /usr/local/bin/drupal && \
-    /usr/local/bin/drupal check
-
-ENTRYPOINT [ "/usr/local/bin/drupal" ]

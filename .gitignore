@@ -70,6 +70,5 @@ web/robots.txt
 
 # Docker
 .docker.env
-
-# Custom theme
-web/themes/custom/cadrek12/components/asset-builds/css/*.css.*
+/.editorconfig
+/.gitattributes

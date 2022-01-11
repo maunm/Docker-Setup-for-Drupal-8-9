@@ -21,7 +21,7 @@ services:
        - ./docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
        - ./docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
     ports:
-      - 8888:80
+      - 8010:80
     links:
       - db:drupal_db
     networks:
@@ -33,7 +33,7 @@ services:
     environment:
        - 'PMA_HOST=db'
     ports:
-      - "8889:80"
+      - "8011:80"
     networks:
       - drupal-net
     depends_on:
