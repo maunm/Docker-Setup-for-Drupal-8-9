@@ -8,6 +8,8 @@ PHP: 7.4
 Apache: 2.4
 MySql: 5.7
 Memcached: 3.1.3
+Drush: 10.6.1
+Composer: 2.1.9
 
 ## Local Docker Setup.
 1. Copy the `.docker.env.default` file and name it as `.docker.env`.
